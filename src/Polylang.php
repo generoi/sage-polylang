@@ -47,7 +47,10 @@ class Polylang
             return $translation;
         }
         // Translate using polylang.
-        return pll__($text);
+        $pll_translation = pll__($text);
+
+        // If there's a Polylang translation it takes precedence over WP core.
+        return $pll_translation !== $text ? $pll_translation : $translation;
     }
 
     /**
