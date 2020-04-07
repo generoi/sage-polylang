@@ -18,7 +18,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Genero\\Sage\\": "src/"
+      "Genero\\Sage\\Polylang\\": "src/"
     }
   },
   "require": {
@@ -27,6 +27,14 @@
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "~3.0"
+  },
+  "extra": {
+    "acorn": {
+      "providers": [
+        "Genero\\Sage\\Polylang\\Providers\\PolylangServiceProvider",
+        "Genero\\Sage\\Polylang\\Providers\\TranslationFinderServiceProvider"
+      ]
+    }
   },
   "scripts": {
     "test": [
