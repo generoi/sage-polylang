@@ -24,7 +24,7 @@ class PolylangServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../config/polylang.php' => config_path('polylang.php'),
+            __DIR__ . '/../../config/polylang.php' => $this->app->configPath('polylang.php'),
         ], 'config');
     }
 }
