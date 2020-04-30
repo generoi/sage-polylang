@@ -37,7 +37,7 @@ class TranslationFinderServiceProvider extends ServiceProvider
             return;
         }
 
-        $config = config('polylang.translation_finder') ?: [];
+        $config = $this->app['config']->get('polylang.translation_finder') ?: [];
         $strings = $this->findTranslatableStrings($config);
         $translationFinder->registerTranslations($strings);
     }
