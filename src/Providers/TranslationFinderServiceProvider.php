@@ -4,7 +4,7 @@ namespace Genero\Sage\Polylang\Providers;
 
 use Genero\Sage\Polylang\TranslationFinder;
 use Genero\Sage\Polylang\StringFinder;
-use Roots\Acorn\ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 class TranslationFinderServiceProvider extends ServiceProvider
 {
