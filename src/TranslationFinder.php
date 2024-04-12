@@ -40,8 +40,17 @@ class TranslationFinder
         if (!in_array($domain, $this->domains())) {
             return $translation;
         }
+
         // Translate using polylang.
-        $pll_translation = pll__($text);
+        if (request()->routeIs('livewire.update')) {
+            $lang = request()->cookie(PLL_COOKIE);
+
+            if (! empty($lang)) {
+                $pll_translation = pll_translate_string($text, $lang);
+            }
+        } else {
+            $pll_translation = pll__($text);
+        }
 
         // If there's a Polylang translation it takes precedence over WP core.
         return $pll_translation !== $text ? $pll_translation : $translation;
